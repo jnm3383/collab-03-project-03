@@ -127,8 +127,15 @@ const Utils = {
     - this method will take in one paramater, the video
     - we only care about the minutes.
     - HINT: this should return a number, not a string
-
     */
+
+   // Lydia
+    getVideoDuration: function(video) {
+        let strDuration = video.videoLength;
+        let strMin = strDuration.split(":");
+        let numMin = Number.parseFloat(strMin);
+        return numMin;
+    },
     
     /* TODO: Define a method to filter videos based on their length
     - call this method filterByVideoLength
