@@ -132,8 +132,8 @@ const Utils = {
    // Lydia
     getVideoDuration: function(video) {
         let strDuration = video.videoLength;
-        let strMin = strDuration.split(":");
-        let numMin = Number.parseFloat(strMin);
+        let strMin = strDuration.split(":")[0];
+        let numMin = Number.parseInt(strMin);
         return numMin;
     },
     
