@@ -102,7 +102,7 @@ const Utils = {
         let filteredVideos = youtubeVideos;
         
         /* TODO: Filter the videos based on the selected video length
-        
+
         */
         
         filteredVideos.forEach(video => {
@@ -146,6 +146,10 @@ const Utils = {
 
     */
 
+    // Jessie
+    filterByVideoLength: function(video){
+    
+    },
 
 
     
