@@ -54,6 +54,7 @@
   input[type="checkbox"],
   input[type="radio"] {
       margin-right: 5px;
+      transform: scale(2); 
   }
   
   div > label:not(:last-child) {
