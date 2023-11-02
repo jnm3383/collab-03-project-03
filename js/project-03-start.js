@@ -101,15 +101,9 @@ const Utils = {
         // just a quick reference to the list of videos above;
         let filteredVideos = youtubeVideos;
         
-        /* TODO: Filter the videos based on the selected video length*/
-        
-        //Felicia
-       let arrVideoLength = Object.keys(videoLength);
-        console.log(arrVideoLength);
+        /* TODO: Filter the videos based on the selected video length
 
-        let oneMinuteVideos = arrVideoLength.filter(videoLength => videoLength.length < 1);
-        console.log(oneMinuteVideos); 
-        //end Felicia
+        */
         
         filteredVideos.forEach(video => {
             const li = document.createElement('li');
