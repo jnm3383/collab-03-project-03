@@ -91,7 +91,15 @@ const youtubeVideos = [
     }
 ];
 
-
+/*
+    --Sequence of Events--
+    1. A radio button is clicked by the user. This action calls the .displayVideos() method.
+    2. The .displayVideos() method calls the .getSelectedVideoLength() method to determine the length specified by the radio button the user clicked (short, medium, or long).
+    3. The .displayVideos() method calls the .filterByVideoLength() method to filter the video list based on length.
+        3a. The .filterByVideoLength() method calls the .getVideoDuration() method to find the length of each video in the list.
+        3b. The .filterByVideoLength() method calls the .matchesLengthCriteria(), which plugs the video lengths found by .getVideoDuration() into one of three conditional statements to determine which video lengths meet the selected length criteria. The conditional statements are cases in a switch structure, and which case is used is determined by the value of the selected radio button (e.g. "short").
+    4. The .displayVideos() method takes the list of filtered videos returned by .filterByVideoLength() and uses a .forEach() method to format the video information that will be presented to the user.
+*/
 
 const Utils = {
     displayVideos: function() {
@@ -102,9 +110,12 @@ const Utils = {
         let filteredVideos = youtubeVideos;
         
         /* TODO: Filter the videos based on the selected video length
-
         */
-        
+       // Lydia
+        if (videoLength) {
+            filteredVideos = Utils.filterByVideoLength(filteredVideos, videoLength);
+        }
+
         filteredVideos.forEach(video => {
             const li = document.createElement('li');
             li.textContent = `${video.videoTitle} (Published on: ${video.publishDate})`;
