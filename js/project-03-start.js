@@ -176,6 +176,20 @@ const Utils = {
     - consider what type of conditional logic is best suited for this. There is a finite list.
 
     */
+   
+   // Lydia
+    matchesVideoLengthCriteria: function(length, strCriteria) {
+        switch(strCriteria) {
+            case 'short':
+                return length < 1;
+            case 'medium':
+                return length >= 1 && length <= 5;
+            case 'long':
+                return length > 5;
+            default:
+                return false;
+        }
+    },
     
     displayAllVideos: function(el) {
         Utils.clearItemList();
@@ -195,5 +209,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     Utils.displayAllVideos('#itemListVideos');
 });
-
-
