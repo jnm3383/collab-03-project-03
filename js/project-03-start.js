@@ -121,6 +121,7 @@ const Utils = {
             li.textContent = `${video.videoTitle} (Published on: ${video.publishDate})`;
             document.getElementById('itemListVideos').appendChild(li);
         });
+        
     },
 
     clearItemList: function() {        
@@ -157,12 +158,13 @@ const Utils = {
 
     */
 
-    // Jessie
-    filterByVideoLength: function(video){
-    
+     // Jessie
+     filterByVideoLength: function(videoList, lengthCriteria) {
+        return videoList.filter(video => {
+            const videoDuration = Utils.getVideoDuration(video);
+            return Utils.matchesVideoLengthCriteria(videoDuration, lengthCriteria);
+        });
     },
-
-
     
     /* TODO: Define a method to check if a video matches a certain length criteria
     - call this method matchesVideoLengthCriteria
