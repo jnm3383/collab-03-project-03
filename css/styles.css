@@ -14,7 +14,7 @@
   }
   
   section {
-    border:1px solid #dadada;
+    border:4px solid pink;
     padding:1em;
     margin-bottom:var(--sec-spacer);
   }
@@ -34,6 +34,8 @@
   li {
       padding: 8px 10px;
       border-bottom: 1px solid #ddd;
+      color: #5A5A5A;
+     font-size: 1em;
   }
   
   li:last-child {
@@ -49,13 +51,35 @@
       display: inline-block;
       margin-bottom: 5px;
       margin-right: 10px;
+      font-size: 1em;
   }
   
   /* Felicia */
   input[type="checkbox"],
   input[type="radio"] {
       margin-right: 5px;
-      transform: scale(2); 
+      transform: scale(2);
+      accent-color: pink;
+  }
+
+  .radio-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  /* Modular Scale font sizing */
+
+  h2 {
+    text-align: center;
+    font-size: 4.236em;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 2.618em;
   }
   
   div > label:not(:last-child) {
