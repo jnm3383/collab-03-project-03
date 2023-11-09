@@ -116,11 +116,21 @@ const Utils = {
             filteredVideos = Utils.filterByVideoLength(filteredVideos, videoLength);
         }
 
-        filteredVideos.forEach(video => {
+
+        if(filteredVideos.length <= 0) {
             const li = document.createElement('li');
-            li.textContent = `${video.videoTitle} (Published on: ${video.publishDate})`;
+            li.textContent = `There are no videos with this criteria`;
             document.getElementById('itemListVideos').appendChild(li);
-        });
+        }
+
+        if(filteredVideos.length > 0) {
+            filteredVideos.forEach(video => {
+                const li = document.createElement('li');
+                li.textContent = `${video.videoTitle} (Published on: ${video.publishDate})`;
+                document.getElementById('itemListVideos').appendChild(li);
+            });
+        }
+
         
     },
 
@@ -178,7 +188,7 @@ const Utils = {
     - consider what type of conditional logic is best suited for this. There is a finite list.
 
     */
-   
+
    // Lydia
     matchesVideoLengthCriteria: function(length, strCriteria) {
         switch(strCriteria) {
